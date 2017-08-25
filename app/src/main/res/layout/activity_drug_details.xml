@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_drug_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.staarline.drugdirectory.DrugDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/drugNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drug Name"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:padding="8dp"
+                android:background="@android:color/white"
+                android:textAllCaps="true"/>
+
+            <ImageView
+                android:id="@+id/drugImage"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@android:color/white"
+                android:src="@drawable/drugimage"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/diseasesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="This drug cures all diseases... lol"
+                android:textSize="18sp"
+                android:padding="8dp"
+                />
+
+            <TextView
+                android:id="@+id/dosageTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dosage"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:background="@android:color/white"
+                android:padding="8dp"
+                android:textSize="28sp"
+               />
+
+            <TextView
+                android:id="@+id/doseTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="2 tablet, every four hours"
+                android:textSize="18sp"
+                android:padding="8dp"
+                />
+            <TextView
+            android:id="@+id/adverseEffectTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adverse Effect"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:padding="8dp"
+            android:background="@android:color/white"
+            />
+            <TextView
+                android:id="@+id/effectTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Allergic reactions like skin rash"
+                android:background="@android:color/white"
+                android:textSize="18sp"
+                android:padding="8dp"/>
+            <TextView
+                android:id="@+id/manufactureTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Manufacturers"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:textSize="28sp"
+                android:background="@android:color/white"
+                android:padding="8dp"
+                />
+
+                <TextView
+                    android:id="@+id/ManuName1TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PMG"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="@android:color/white"/>
+                <TextView
+                    android:id="@+id/ManuName2TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PMG"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="@android:color/white"/>
+                <TextView
+                    android:id="@+id/ManuName3TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PMG"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:padding="8dp"
+                    android:background="@android:color/white"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
