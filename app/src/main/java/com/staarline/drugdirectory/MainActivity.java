@@ -2,7 +2,6 @@ package com.staarline.drugdirectory;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -10,11 +9,8 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,14 +30,14 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         drugArrayAdapter = new DrugArrayAdapter(getdrugTypes(), this);
 
         listView.setAdapter(drugArrayAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), DrugDetailsActivity.class);
-                intent.putExtra("drugs", (Serializable) drugArrayAdapter.getItem(position));
-                startActivity(intent);
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent intent = new Intent(getApplicationContext(), DrugDetailsActivity.class);
+//                intent.putExtra("drugs", (Serializable) drugArrayAdapter.getItem(position));
+//                startActivity(intent);
+//            }
+//        });
 
         listView.setTextFilterEnabled(true);
     }
@@ -71,14 +67,12 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextChange(String newText) {
-        drugArrayAdapter.getFilter().filter(newText);
         if (TextUtils.isEmpty(newText)) {
             listView.clearTextFilter();
         }
         else {
             listView.setFilterText(newText.toString());
         }
-
         return true;
     }
 

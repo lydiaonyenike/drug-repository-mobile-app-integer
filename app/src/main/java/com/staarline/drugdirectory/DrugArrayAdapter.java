@@ -1,6 +1,7 @@
 package com.staarline.drugdirectory;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -27,13 +28,13 @@ public class DrugArrayAdapter extends BaseAdapter implements Filterable {
 
     public DrugArrayAdapter(List<Drug> drugTypes, Context context) {
         this.drugsList = drugTypes;
-        this.filteredList = drugTypes;
+        this.filteredList = new ArrayList<>(drugTypes);
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return this.drugsList.size();
+        return this.filteredList.size();
     }
 
     @Override
@@ -56,8 +57,8 @@ public class DrugArrayAdapter extends BaseAdapter implements Filterable {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Drug drg = this.drugsList.get(position);
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        Drug drg = this.filteredList.get(position);
 
 
         LayoutInflater inflater = ((AppCompatActivity) this.context).getLayoutInflater();
@@ -70,6 +71,15 @@ public class DrugArrayAdapter extends BaseAdapter implements Filterable {
         ImageView drugImage = (ImageView) convertView.findViewById(R.id.drugImageView);
         Drawable newDrawable = context.getResources().getDrawable(drg.imageResourceId);
         drugImage.setImageDrawable(newDrawable);
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DrugDetailsActivity.class);
+                intent.putExtra("drugs", filteredList.get(position));
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 

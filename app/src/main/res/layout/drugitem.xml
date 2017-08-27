@@ -26,7 +26,8 @@
             android:textAlignment="center"
             android:padding="8dp"
             android:id="@+id/drugNameTextView"
-            android:textAllCaps="true"/>
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_dark"/>
     </LinearLayout>
 
 </LinearLayout>
